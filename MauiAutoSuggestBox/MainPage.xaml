@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MauiAutoSuggestBox.Controls"
              x:Class="MauiAutoSuggestBox.MainPage">
 
     <ScrollView>
@@ -15,6 +16,8 @@
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
+            <controls:AutoSuggestEntry WidthRequest="100" HeightRequest="30" />
+            
             <Label
                 Text="Hello, World!"
                 SemanticProperties.HeadingLevel="Level1"

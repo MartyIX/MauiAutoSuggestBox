@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiAutoSuggestBox.Controls;
+using MauiAutoSuggestBox.Platforms.Windows.Handlers;
+using Microsoft.Extensions.Logging;
 
 namespace MauiAutoSuggestBox
 {
@@ -13,10 +15,14 @@ namespace MauiAutoSuggestBox
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                })
+                .ConfigureMauiHandlers(handlers =>
+                {
+                    handlers.AddHandler(typeof(AutoSuggestEntry), typeof(AutoSuggestHandler));
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
